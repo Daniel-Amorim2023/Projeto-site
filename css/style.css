@@ -266,7 +266,7 @@ body button:hover {
     .main-content, .grid {
         grid-template-columns: 1fr;
     }
-
+d
     #contact .main-content .main-text {
         grid-column: span 2;
     }
@@ -328,5 +328,11 @@ body button:hover {
 
     .spacing {
         display: none;
+    }
+}
+
+@media (max-width: 365px) {
+    .grid-content h2 {
+        font-size: 5rem;
     }
 }
