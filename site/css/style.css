@@ -1,0 +1,331 @@
+/* links do site referência: https://landingpagecursojs.netlify.app/#grid-two */
+/* links para fonte: https://fonts.google.com/ */
+/* link para plano de fundo: https://www.svgbackgrounds.com/ */
+/* link para validar o HTML: https://validator.w3.org/ */
+/* link para validar a acessibilidade: https://achecks.org/achecker/ */
+/* link para encontrar desenhos: https://undraw.co/ */
+
+/* fontes */
+/* font-family: 'Open Sans', sans-serif; */
+/* font-family: 'Montserrat', sans-serif; */
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 0.1rem solid var(--light-gray-color);
+}
+
+.menu-content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1 {
+    font-size: 2.3rem;
+}
+
+.menu h1 a {
+    color: inherit;
+}
+
+.menu nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.menu-content nav ul a {
+    display: block;
+    padding: 2rem;
+    font-size: 1.8rem;
+    position: relative;
+    color: inherit;
+}
+
+.menu-content nav ul a::after {
+    content: '';
+    background-color: var(--orange-color);
+    bottom: 1.2rem;
+    left: 4.5rem;
+    width: 0;
+    height: 0.4rem;
+    position: absolute;
+    transition: all 300ms ease-in-out;
+}
+
+.menu-content nav ul a:hover::after {
+    left: 1rem;
+    width: 80%;
+}
+
+/* Section main */
+
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+
+.main-text, .main-img  {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.main-text p {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.main-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* SECTION INTRO */
+.intro-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    max-width: 64rem;
+    text-align: center;
+    padding-top: 3rem;
+}
+
+.intro-content p {
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+/* GRID-ONE / GRID-TWO / GALLERY */
+.grid-content {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+}
+
+.grid-content h2, .gallery-content h2 {
+    margin-bottom: 0.1rem;
+}
+
+.description {
+    margin: 0 0 8rem 1.5rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+    counter-reset: grid-counter;
+}
+
+.grid h3 {
+    font-family: sans-serif;
+    font-size: 3rem;
+    text-transform: capitalize;
+    position: relative;
+    left: 5rem;
+    margin-bottom: 3rem;
+    max-width: 5rem;
+}
+
+.grid h3::before {
+    counter-increment: grid-counter;
+    content: counter(grid-counter);
+    position: absolute;
+    left: -6rem;
+    top: -5rem;
+    font-size: 10rem;
+    transform: rotate(10deg);
+}
+
+/* GALLERY */
+
+.grid-gallery div {
+    width: 100%;
+    max-height: 36rem;
+    max-width: 36rem;
+    overflow: hidden;
+}
+
+
+.grid-gallery div img {
+    transition: all 300ms ease-in-out;
+}   
+
+.grid-gallery div img:hover {
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
+}
+
+/* PRICING */
+
+.table {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+/* CONTACT */
+
+.contact-form {
+    grid-column: span 2;
+}
+
+.form-grid {
+    border: none;
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--gap);
+}
+
+.form-grid legend {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: var(--orange-color);
+}
+
+.form-group {
+    flex: 1 1 32rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+}
+
+.form-group input,
+.form-group textarea {
+    border: none;
+    background-color: var(--white-color);
+    padding: 1.5rem 2rem;
+    width: 100%;
+    font-size: 2rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    box-shadow: 0 0 2rem var(--orange-color);
+}
+
+body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}
+
+body button {
+    border: 0.5rem solid var(--white-color);
+    background: none;
+    color: var(--white-color);
+    padding: 1.2rem 2.5rem;
+    transition: all 300ms ease-in-out;
+}
+
+body button:hover {
+    border: 0.5rem solid var(--white-color);
+    background: var(--white-color);
+    color: var(--primary-color);
+    padding: 1.2rem 2.5rem;
+}
+
+.close-menu {
+    display: none;
+}
+
+.back-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--white-color);
+    color: var(--primary-color);
+    border: 0.1rem solid var(--light-gray-color);
+    transform: rotate(-90deg);
+}
+
+@media (max-width: 800px) {
+    .main-content, .grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contact .main-content .main-text {
+        grid-column: span 2;
+    }
+
+    body .gallery-content {
+        padding: 9rem 0 5rem 0;
+    }
+
+    .grid-gallery div {
+        width: 100%;
+        max-height: 100%;
+        max-width: 100%;
+    }
+
+    .grid-gallery div img, .grid-gallery div {
+        width: 100%;
+    }
+
+    .menu {
+        text-align: center;
+    }
+
+    .menu-content, .menu-content ul {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+
+    }
+
+    .menu-content {
+        height: 100vh;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .close-menu-label::after {
+        content: '≡';
+        position: fixed;
+        top: 1.5rem;
+        right: 1.5rem;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        font-size: 3rem;
+        padding: 0.5rem 1.5rem;
+        cursor: pointer;
+    }
+
+    /* × */
+    .close-menu:checked~.menu {
+        display: block;
+    }
+
+    .close-menu:checked~.close-menu-label::after {
+        content: '×';
+        z-index: 3;
+    }
+
+    .spacing {
+        display: none;
+    }
+}

@@ -1,0 +1,21 @@
+:root {
+    --primary-color: #0A1128;
+    --white-color: #FFFFFF;
+    --light-gray-color: #EEEEEE;
+    --orange-color: #f46827;
+    --gap: 3rem;
+}
+
+/* footer */
+
+footer p {
+    text-align: center;
+    padding: 1rem;
+    font-style: italic;
+    color: var(--primary-color);
+}
+
+footer span {
+    color: red;
+    font-weight: bolder;
+}
